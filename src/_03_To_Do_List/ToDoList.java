@@ -1,6 +1,76 @@
 package _03_To_Do_List;
 
-public class ToDoList {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ToDoList implements ActionListener {
+	
+	
+	JFrame frame;
+	JPanel panel;
+	
+	JButton addTask;
+	JButton viewTasks;
+	JButton removeTask;
+	JButton saveList;
+	JButton loadList;
+	
+	
+	public static void main(String[] args) {
+		ToDoList tdl = new ToDoList();
+	}
+	
+	ToDoList() {
+		
+		//Parents
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		
+		//Child/Buttons
+		JButton addTask = new JButton();
+		JButton viewTasks = new JButton();
+		JButton removeTask = new JButton();
+		JButton saveList = new JButton();
+		JButton loadList = new JButton();
+		
+		frame.add(panel);
+		panel.add(addTask);
+		panel.add(viewTasks);
+		panel.add(removeTask);
+		panel.add(saveList);
+		panel.add(loadList);
+		frame.setVisible(true);
+		frame.pack();
+		
+		addTask.setText("Add Task");
+		viewTasks.setText("View Tasks");
+		removeTask.setText("Remove Task");
+		saveList.setText("Save List");
+		loadList.setText("Load List");
+		
+		addTask.addActionListener(this);
+		viewTasks.addActionListener(this);
+		removeTask.addActionListener(this);
+		saveList.addActionListener(this);
+		loadList.addActionListener(this);
+		
+	}
+	
+	 @Override
+	    public void actionPerformed(ActionEvent e) {
+		 JButton testButton = (JButton) e.getSource();
+		 
+		 if(addTask.equals(testButton)) {
+			 System.out.println("addtask");
+		 }
+	    }
+	
+	
+	
 	/*
 	 * Create a program with five buttons, add task, view tasks, remove task, save list, and load list. 
 	 *
