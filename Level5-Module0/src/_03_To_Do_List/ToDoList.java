@@ -62,12 +62,15 @@ public class ToDoList implements ActionListener {
 	
 	 @Override
 	    public void actionPerformed(ActionEvent e) {
-		 JButton testButton = (JButton) e.getSource();
-		 
-		 if(addTask.equals(testButton)) {
-			 System.out.println("addtask");
-		 }
-	    }
+		    JButton src = (JButton)e.getSource();
+		    
+		    if(src == addTask) {
+		    	System.out.println("add task");
+		    }
+         
+         
+		}
+	    
 	
 	
 	
